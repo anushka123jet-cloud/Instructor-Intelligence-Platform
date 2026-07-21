@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from utils.theme import load_css
+
+load_css()
+from utils.components import hero
 
 st.set_page_config(
     page_title="Dashboard",
@@ -55,25 +59,19 @@ and platform insights.
 # -----------------------------
 
 st.markdown("""
-<div style="
-padding:40px;
-background:linear-gradient(90deg,#2563EB,#7C3AED);
-border-radius:20px;
-text-align:center;
-color:white;
-">
+<div class="hero">
 
-<h1 style="font-size:50px;">
+<div class="hero-badge">
+🚀 AI Powered • Real-Time Analytics • Machine Learning
+</div>
+
+<h1 class="hero-title">
 📊 Instructor Analytics Dashboard
 </h1>
 
-<h3>
-AI-Powered Educational Intelligence
-</h3>
-
-<p style="font-size:18px;">
-Monitor instructor performance, analyze learning behaviour,
-and visualize educational insights.
+<p class="hero-subtitle">
+Transform educational data into actionable insights with intelligent
+analytics, interactive visualizations, and machine learning predictions.
 </p>
 
 </div>
