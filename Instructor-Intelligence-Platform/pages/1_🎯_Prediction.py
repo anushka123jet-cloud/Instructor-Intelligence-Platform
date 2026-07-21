@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 import joblib
+from utils.theme import load_css
+from utils.components import hero
+
+load_css()
 
 # ==========================================
 # Page Configuration
@@ -83,17 +87,11 @@ border:1px solid #374151;
 # Heading
 # ==========================================
 
-st.markdown(
-'<p class="big-title">🎯 Instructor Effectiveness Prediction</p>',
-unsafe_allow_html=True
+hero(
+    "Instructor Effectiveness Prediction",
+    "Predict instructor effectiveness using Machine Learning and Artificial Intelligence.",
+    "🎯"
 )
-
-st.markdown(
-'<p class="sub">Predict instructor effectiveness using Machine Learning.</p>',
-unsafe_allow_html=True
-)
-
-st.markdown("---")
 
 # ==========================================
 # Two Columns
