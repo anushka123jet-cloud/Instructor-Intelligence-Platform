@@ -23,10 +23,8 @@ background:linear-gradient(
 /* Sidebar */
 
 section[data-testid="stSidebar"]{
-
-background:#0D1628;
-border-right:1px solid #2E3A59;
-
+    background:linear-gradient(180deg,#08111F,#0F1C33);
+    border-right:1px solid rgba(255,255,255,.08);
 }
 
 /* Buttons */
@@ -70,21 +68,6 @@ border-radius:12px;
 
 }
 
-/* Cards */
-
-.metric-card{
-
-background:rgba(255,255,255,.06);
-
-backdrop-filter:blur(12px);
-
-padding:20px;
-
-border-radius:18px;
-
-border:1px solid rgba(255,255,255,.08);
-
-}
 
 /* Headings */
 
@@ -163,9 +146,84 @@ font-size:14px;
     line-height:1.8;
 }
 .main .block-container{
-    max-width: 1400px;
-    padding-top: 1.5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
+    max-width:1450px;
+    padding-top:1rem;
+    padding-left:2rem;
+    padding-right:2rem;
+    padding-bottom:2rem;
+}
+/* ===========================
+   PREMIUM METRIC CARDS
+=========================== */
+
+.metric-card{
+    background:linear-gradient(135deg,#2563EB,#5B4BDB);
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    color:white;
+    box-shadow:0 15px 35px rgba(0,0,0,.30);
+    transition:.35s;
+}
+
+.metric-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 20px 45px rgba(0,0,0,.45);
+}
+
+.metric-title{
+    font-size:22px;
+    font-weight:700;
+}
+
+.metric-value{
+    font-size:46px;
+    font-weight:800;
+    margin-top:12px;
+}
+
+/* ===========================
+   CHART CARD
+=========================== */
+
+.chart-card{
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,.08);
+    padding:22px;
+    border-radius:20px;
+    margin-top:20px;
+    margin-bottom:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,.30);
+    transition:.3s;
+}
+
+.chart-card:hover{
+    transform:translateY(-5px);
+}
+
+/* ===========================
+   DATAFRAME
+=========================== */
+
+[data-testid="stDataFrame"]{
+    border-radius:18px;
+    overflow:hidden;
+}
+
+/* ===========================
+   SUCCESS / INFO / ERROR
+=========================== */
+
+.stAlert{
+    border-radius:15px;
+}
+
+/* ===========================
+   BUTTON HOVER
+=========================== */
+
+.stButton>button:hover{
+    transform:translateY(-4px) scale(1.02);
+    transition:.3s;
 }
