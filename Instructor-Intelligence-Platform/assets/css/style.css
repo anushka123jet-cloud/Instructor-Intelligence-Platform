@@ -230,3 +230,14 @@ details{
 [data-testid="stFileUploader"]{
     border-radius:18px;
 }
+#MainMenu{
+    visibility:hidden;
+}
+
+footer{
+    visibility:hidden;
+}
+
+header{
+    visibility:hidden;
+}
