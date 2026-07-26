@@ -241,3 +241,8 @@ footer{
 header{
     visibility:hidden;
 }
+/* Main Containers */
+
+div[data-testid="stVerticalBlock"] > div{
+    border-radius:18px;
+}
