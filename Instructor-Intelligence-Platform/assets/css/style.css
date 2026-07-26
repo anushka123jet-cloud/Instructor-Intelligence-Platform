@@ -246,3 +246,7 @@ header{
 div[data-testid="stVerticalBlock"] > div{
     border-radius:18px;
 }
+.js-plotly-plot{
+    border-radius:18px;
+    overflow:hidden;
+}
