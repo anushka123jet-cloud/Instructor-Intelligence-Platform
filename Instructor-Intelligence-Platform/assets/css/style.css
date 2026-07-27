@@ -177,9 +177,13 @@ font-size:14px;
 }
 
 .metric-value{
-    font-size:46px;
-    font-weight:800;
-    margin-top:12px;
+
+font-size:52px;
+
+font-weight:800;
+
+letter-spacing:1px;
+
 }
 
 /* ===========================
