@@ -210,9 +210,20 @@ letter-spacing:1px;
    DATAFRAME
 =========================== */
 
-[data-testid="stDataFrame"]{
-    border-radius:18px;
-    overflow:hidden;
+div[data-testid="stMetric"]{
+
+transition:.35s;
+
+}
+
+div[data-testid="stMetric"]:hover{
+
+transform:translateY(-5px);
+
+background:
+
+rgba(255,255,255,.08);
+
 }
 
 /* ===========================
