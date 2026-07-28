@@ -24,8 +24,15 @@ background:linear-gradient(
 
 section[data-testid="stSidebar"]{
 
-box-shadow:
+background:linear-gradient(
+180deg,
+#08111F,
+#11203A
+);
 
+border-right:1px solid rgba(255,255,255,.08);
+
+box-shadow:
 5px 0 25px rgba(0,0,0,.35);
 
 }
