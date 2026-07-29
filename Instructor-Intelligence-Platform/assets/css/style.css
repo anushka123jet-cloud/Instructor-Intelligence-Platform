@@ -343,3 +343,24 @@ transition:.35s;
 transform:scale(1.01);
 
 }
+.main{
+
+animation:pageFade .6s ease;
+
+}
+
+@keyframes pageFade{
+
+from{
+
+opacity:0;
+
+}
+
+to{
+
+opacity:1;
+
+}
+
+}
