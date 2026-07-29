@@ -332,3 +332,14 @@ border-radius:20px;
 background:#2563EB;
 
 }
+.js-plotly-plot{
+
+transition:.35s;
+
+}
+
+.js-plotly-plot:hover{
+
+transform:scale(1.01);
+
+}
