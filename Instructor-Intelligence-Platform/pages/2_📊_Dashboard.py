@@ -61,18 +61,22 @@ and platform insights.
 st.markdown("""
 <div class="hero">
 
-<div class="hero-badge">
-🚀 AI Powered • Real-Time Analytics • Machine Learning
-</div>
+    <div class="hero-badge">
+        🚀 AI Powered • Real-Time Analytics • Machine Learning
+    </div>
 
-<h1 class="hero-title">
-📊 Instructor Analytics Dashboard
-</h1>
+    <div class="hero-content">
 
-<p class="hero-subtitle">
-Transform educational data into actionable insights with intelligent
-analytics, interactive visualizations, and machine learning predictions.
-</p>
+        <h1 class="hero-title">
+            📊 Instructor Analytics Dashboard
+        </h1>
+
+        <p class="hero-subtitle">
+            Transform educational data into actionable insights with intelligent analytics,
+            interactive visualizations, and machine learning predictions.
+        </p>
+
+    </div>
 
 </div>
 """, unsafe_allow_html=True)
