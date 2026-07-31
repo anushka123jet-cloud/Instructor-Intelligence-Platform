@@ -11,34 +11,9 @@ st.set_page_config(
     page_icon="📊",
     layout="wide"
 )
-st.markdown("""
-<style>
 
-/* Main background */
-.main{
-    background-color:#0E1117;
-}
 
-/* KPI Card */
-.metric-card{
-    background:linear-gradient(135deg,#2563EB,#4F46E5);
-    padding:20px;
-    border-radius:18px;
-    color:white;
-    text-align:center;
-    box-shadow:0px 8px 20px rgba(0,0,0,0.3);
-}
 
-/* Section Heading */
-.section{
-    font-size:30px;
-    font-weight:700;
-    color:#3B82F6;
-    margin-top:20px;
-}
-
-</style>
-""", unsafe_allow_html=True)
 # -----------------------------
 # Sidebar
 # -----------------------------
