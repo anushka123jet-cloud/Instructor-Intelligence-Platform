@@ -105,6 +105,22 @@ font-size:14px;
 .hero{
     position:relative;
     overflow:hidden;
+
+    padding:45px;
+    border-radius:24px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(37,99,235,.92),
+        rgba(124,58,237,.92),
+        rgba(6,182,212,.92)
+    );
+
+    color:white;
+    text-align:center;
+    margin-bottom:30px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
 }
 
 .hero::before{
