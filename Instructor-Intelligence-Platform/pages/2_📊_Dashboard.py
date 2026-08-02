@@ -69,7 +69,7 @@ for col,(title,value) in zip([c1,c2,c3,c4],cards):
 
     with col:
 
-        st.markdown(f"""
+        st.markdown("""
         <div class="metric-card">
 
         <h3>{title}</h3>
