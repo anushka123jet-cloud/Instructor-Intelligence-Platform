@@ -1,16 +1,19 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-from utils.theme import load_css
 
-load_css()
+from utils.theme import load_css
 from utils.components import hero
 
+# MUST BE FIRST STREAMLIT COMMAND
 st.set_page_config(
     page_title="Dashboard",
     page_icon="📊",
     layout="wide"
 )
+
+# Load CSS after page config
+load_css()
 
 
 
@@ -33,11 +36,28 @@ and platform insights.
 # Title
 # -----------------------------
 
-hero(
-    "Instructor Analytics Dashboard",
-    "Transform educational data into actionable insights with intelligent analytics, interactive visualizations, and machine learning predictions.",
-    "📊"
-)
+st.markdown("""
+<div class="hero">
+
+    <div class="hero-badge">
+        🚀 AI Powered • Real-Time Analytics • Machine Learning
+    </div>
+
+    <div class="hero-content">
+
+        <h1 class="hero-title">
+            📊 Instructor Analytics Dashboard
+        </h1>
+
+        <p class="hero-subtitle">
+            Transform educational data into actionable insights with intelligent analytics,
+            interactive visualizations, and machine learning predictions.
+        </p>
+
+    </div>
+
+</div>
+""", unsafe_allow_html=True)
 
 c1,c2,c3,c4=st.columns(4)
 
