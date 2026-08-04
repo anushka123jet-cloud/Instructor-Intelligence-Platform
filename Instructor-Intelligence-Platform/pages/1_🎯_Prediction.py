@@ -1,20 +1,19 @@
 import streamlit as st
 import pandas as pd
 import joblib
+
 from utils.theme import load_css
 from utils.components import hero
 
-load_css()
-
-# ==========================================
-# Page Configuration
-# ==========================================
-
+# FIRST STREAMLIT COMMAND
 st.set_page_config(
     page_title="Instructor Prediction",
     page_icon="🎯",
     layout="wide"
 )
+
+# THEN load css
+load_css()
 
 # ==========================================
 # Load Model & Scaler
@@ -50,38 +49,8 @@ st.sidebar.write("✔ Cross Validation : 94.12%")
 
 st.sidebar.write("✔ Features : 10")
 
-# ==========================================
-# Custom CSS
-# ==========================================
 
-st.markdown("""
-<style>
 
-.big-title{
-font-size:42px;
-font-weight:800;
-color:#4F8BF9;
-}
-
-.sub{
-font-size:18px;
-color:gray;
-}
-
-.card{
-
-padding:20px;
-
-border-radius:15px;
-
-background:#111827;
-
-border:1px solid #374151;
-
-}
-
-</style>
-""",unsafe_allow_html=True)
 
 # ==========================================
 # Heading
