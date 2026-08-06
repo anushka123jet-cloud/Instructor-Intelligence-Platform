@@ -402,9 +402,8 @@ opacity:1;
 .hero-content{
     display:flex;
     flex-direction:column;
-    justify-content:center;
     align-items:center;
+    justify-content:center;
+    text-align:center;
     width:100%;
-    max-width:900px;
-    margin:0 auto;
 }
