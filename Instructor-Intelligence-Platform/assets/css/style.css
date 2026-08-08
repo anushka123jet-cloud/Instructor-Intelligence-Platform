@@ -137,25 +137,12 @@ font-size:14px;
 }
 
 .hero-title{
-
-animation:floatTitle 3s ease infinite;
-
-}
-
-@keyframes floatTitle{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-5px);
-}
-
-100%{
-transform:translateY(0);
-}
-
+    font-size:56px;
+    font-weight:800;
+    color:white;
+    text-align:center;
+    margin:15px 0;
+    animation:floatTitle 3s ease infinite;
 }
 
 .hero-subtitle{
