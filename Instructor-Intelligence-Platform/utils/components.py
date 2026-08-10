@@ -1,7 +1,7 @@
 import streamlit as st
 
-def hero(title, subtitle, emoji="🚀"):
 
+def hero(title, subtitle, emoji="🚀"):
     st.markdown(
         f"""
         <div class="hero">
@@ -10,17 +10,13 @@ def hero(title, subtitle, emoji="🚀"):
                 {emoji} AI Powered • Real-Time Analytics • Machine Learning
             </div>
 
-            <div class="hero-content">
+            <h1 class="hero-title">
+                {emoji} {title}
+            </h1>
 
-                <h1 class="hero-title">
-                    {emoji} {title}
-                </h1>
-
-                <p class="hero-subtitle">
-                    {subtitle}
-                </p>
-
-            </div>
+            <p class="hero-subtitle">
+                {subtitle}
+            </p>
 
         </div>
         """,
