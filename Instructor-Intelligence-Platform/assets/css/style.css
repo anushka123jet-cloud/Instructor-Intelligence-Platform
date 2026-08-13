@@ -366,9 +366,6 @@ details {
    PAGE ANIMATION
 ========================================= */
 
-.main {
-    animation: pageFade 0.6s ease;
-}
 
 @keyframes pageFade {
     from {
