@@ -357,12 +357,8 @@ details {
 
 .js-plotly-plot {
     border-radius: 18px;
-
     overflow: hidden;
-
-    transition: all 0.35s ease;
 }
-
 
 
 /* =========================================
