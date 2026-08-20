@@ -421,17 +421,7 @@ details {
    HIDE STREAMLIT DEFAULT UI
 ========================================= */
 
-#MainMenu {
-    visibility: hidden;
-}
 
-footer {
-    visibility: hidden;
-}
-
-header {
-    visibility: hidden;
-}
 
 
 /* =========================================
