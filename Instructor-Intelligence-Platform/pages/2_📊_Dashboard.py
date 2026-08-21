@@ -60,21 +60,15 @@ cards = [
     ("📈 CV Score", "94.12%")
 ]
 
-for col, (title, value) in zip(
-    [c1, c2, c3, c4],
-    cards
-):
+for col, (title, value) in zip([c1, c2, c3, c4], cards):
 
     with col:
 
         st.markdown(
             f"""
             <div class="metric-card">
-
-                <h3>{title}</h3>
-
-                <h1>{value}</h1>
-
+                <div class="metric-title">{title}</div>
+                <div class="metric-value">{value}</div>
             </div>
             """,
             unsafe_allow_html=True
