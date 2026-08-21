@@ -5,21 +5,24 @@ import plotly.express as px
 from utils.theme import load_css
 from utils.components import hero
 
-# MUST BE FIRST STREAMLIT COMMAND
+
+# ==========================================
+# PAGE CONFIGURATION
+# ==========================================
+
 st.set_page_config(
     page_title="Dashboard",
     page_icon="📊",
     layout="wide"
 )
 
-# Load CSS after page config
+# Load CSS
 load_css()
 
 
-
-# -----------------------------
-# Sidebar
-# -----------------------------
+# ==========================================
+# SIDEBAR
+# ==========================================
 
 st.sidebar.title("📊 Dashboard")
 
@@ -32,59 +35,58 @@ model performance,
 and platform insights.
 """)
 
-# -----------------------------
-# Title
-# -----------------------------
 
-st.markdown("""
-<div class="hero">
+# ==========================================
+# HERO SECTION
+# ==========================================
 
-    <div class="hero-badge">
-        🚀 AI Powered • Real-Time Analytics • Machine Learning
-    </div>
+hero(
+    "Instructor Analytics Dashboard",
+    "Transform educational data into actionable insights with intelligent analytics, interactive visualizations, and machine learning predictions.",
+    "📊"
+)
 
-    <div class="hero-content">
 
-        <h1 class="hero-title">
-            📊 Instructor Analytics Dashboard
-        </h1>
+# ==========================================
+# METRIC CARDS
+# ==========================================
 
-        <p class="hero-subtitle">
-            Transform educational data into actionable insights with intelligent analytics,
-            interactive visualizations, and machine learning predictions.
-        </p>
+c1, c2, c3, c4 = st.columns(4)
 
-    </div>
-
-</div>
-""", unsafe_allow_html=True)
-
-c1,c2,c3,c4=st.columns(4)
-
-cards=[
-("🎯 Accuracy","97.22%"),
-("🤖 Best Model","Extra Trees"),
-("📚 Features","10"),
-("📈 CV Score","94.12%")
+cards = [
+    ("🎯 Accuracy", "97.22%"),
+    ("🤖 Best Model", "Extra Trees"),
+    ("📚 Features", "10"),
+    ("📈 CV Score", "94.12%")
 ]
 
-for col,(title,value) in zip([c1,c2,c3,c4],cards):
+for col, (title, value) in zip(
+    [c1, c2, c3, c4],
+    cards
+):
 
     with col:
 
-        st.markdown(f"""
-        <div class="metric-card">
+        st.markdown(
+            f"""
+            <div class="metric-card">
 
-        <h3>{title}</h3>
+                <h3>{title}</h3>
 
-        <h1>{value}</h1>
+                <h1>{value}</h1>
 
-        </div>
-        """,unsafe_allow_html=True)
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+
+
 st.markdown("---")
-# =====================================
-# Feature Importance
-# =====================================
+
+
+# ==========================================
+# FEATURE IMPORTANCE
+# ==========================================
 
 features = [
     "Completion Rate",
@@ -119,9 +121,10 @@ fig = px.bar(
     title="📈 Feature Importance"
 )
 
-# =====================================
-# Model Comparison
-# =====================================
+
+# ==========================================
+# MODEL COMPARISON
+# ==========================================
 
 models = [
     "Logistic Regression",
@@ -150,13 +153,22 @@ fig2 = px.bar(
     title="🏆 Model Comparison"
 )
 
-# =====================================
-# Pie Chart
-# =====================================
 
-labels = ["High", "Medium", "Low"]
+# ==========================================
+# INSTRUCTOR CATEGORIES
+# ==========================================
 
-values = [40,35,25]
+labels = [
+    "High",
+    "Medium",
+    "Low"
+]
+
+values = [
+    40,
+    35,
+    25
+]
 
 fig3 = px.pie(
     names=labels,
@@ -164,72 +176,121 @@ fig3 = px.pie(
     title="🎯 Instructor Categories"
 )
 
-# =====================================
-# Display Charts
-# =====================================
+
+# ==========================================
+# DISPLAY CHARTS
+# ==========================================
 
 left, right = st.columns(2)
 
 with left:
-    st.plotly_chart(fig, use_container_width=True)
+
+    st.plotly_chart(
+        fig,
+        use_container_width=True
+    )
 
 with right:
-    st.plotly_chart(fig3, use_container_width=True)
 
-st.plotly_chart(fig2, use_container_width=True)
+    st.plotly_chart(
+        fig3,
+        use_container_width=True
+    )
+
+
+st.plotly_chart(
+    fig2,
+    use_container_width=True
+)
+
+
+# ==========================================
+# DATASET STATISTICS
+# ==========================================
 
 st.markdown("## 📈 Dataset Statistics")
 
-a,b,c=st.columns(3)
+a, b, c = st.columns(3)
 
-a.info("""
-### 👨‍🏫 High
+with a:
 
-40%
-""")
+    st.info("""
+    ### 👨‍🏫 High
 
-b.warning("""
-### 📘 Medium
+    40%
+    """)
 
-35%
-""")
+with b:
 
-c.error("""
-### 📕 Low
+    st.warning("""
+    ### 📘 Medium
 
-25%
-""")
+    35%
+    """)
+
+with c:
+
+    st.error("""
+    ### 📕 Low
+
+    25%
+    """)
+
+
 st.markdown("---")
+
+
+# ==========================================
+# PLATFORM INSIGHTS
+# ==========================================
 
 st.subheader("📈 Platform Insights")
 
 st.markdown("## 🤖 AI Insights")
 
+
 st.success("""
 ✔ Extra Trees is the best-performing model with **97.22% accuracy**.
 """)
+
 
 st.info("""
 📈 Completion Rate is the strongest predictor of instructor effectiveness.
 """)
 
+
 st.warning("""
 ⚠ Higher dropout rates generally reduce instructor effectiveness.
 """)
 
+
 st.success("""
 ⭐ Instructors with strong feedback scores consistently achieve better predictions.
 """)
+
+
 st.markdown("---")
 
-st.markdown("""
-<div style='text-align:center;color:gray;'>
 
-Instructor Intelligence Platform
+# ==========================================
+# FOOTER
+# ==========================================
 
-Machine Learning • Streamlit • Plotly • Scikit-learn
+st.markdown(
+    """
+    <div style="
+        text-align:center;
+        color:gray;
+        padding:20px;
+    ">
 
-Developed by <b>Anushka Verma</b>
+        <b>Instructor Intelligence Platform</b><br>
 
-</div>
-""", unsafe_allow_html=True)
+        Machine Learning • Streamlit • Plotly • Scikit-learn<br><br>
+
+        Developed by <b>Anushka Verma</b>
+
+    </div>
+    """,
+    unsafe_allow_html=True
+)
