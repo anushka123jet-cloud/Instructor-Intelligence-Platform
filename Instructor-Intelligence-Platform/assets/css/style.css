@@ -170,6 +170,13 @@ div[data-baseweb="input"] {
    HERO TITLE
 ========================================= */
 
+h1 {
+    color: white;
+}
+
+h2 {
+    color: #60A5FA;
+}
 
 
 
