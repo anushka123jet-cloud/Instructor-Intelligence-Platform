@@ -1,4 +1,3 @@
-import streamlit as st
 
 
 def hero(title, subtitle, emoji="🚀"):
