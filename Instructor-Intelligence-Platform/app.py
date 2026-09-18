@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+from pathlib import Path
 
 # ----------------------------------------------------
 # PAGE CONFIG
@@ -323,18 +324,49 @@ with left:
     """, unsafe_allow_html=True)
 
 with right:
-    banner_path = "images/banner.png"
-    if os.path.exists(banner_path):
-        st.markdown('<div class="eic-hero-image-wrap"><div class="eic-hero-image-inner">', unsafe_allow_html=True)
-        st.image(banner_path, use_container_width=True)
-        st.markdown('</div></div>', unsafe_allow_html=True)
+
+    # Get the folder where app.py is located
+    BASE_DIR = Path(__file__).resolve().parent
+
+    # Build the correct path to banner.png
+    banner_path = BASE_DIR / "images" / "banner.png"
+
+    if banner_path.exists():
+
+        st.markdown(
+            '<div class="eic-hero-image-wrap">'
+            '<div class="eic-hero-image-inner">',
+            unsafe_allow_html=True
+        )
+
+        st.image(
+            str(banner_path),
+            use_container_width=True
+        )
+
+        st.markdown(
+            '</div></div>',
+            unsafe_allow_html=True
+        )
+
     else:
+
         st.markdown("""
-        <div class="eic-hero-image-wrap"><div class="eic-hero-image-inner">
-        <div style="padding:70px 20px;text-align:center;color:#99A2C9;background:#131A38;">
-        🎓<br>Place your banner image at <code>images/banner.png</code>
+        <div class="eic-hero-image-wrap">
+            <div class="eic-hero-image-inner">
+
+                <div style="
+                    padding:70px 20px;
+                    text-align:center;
+                    color:#99A2C9;
+                    background:#131A38;
+                ">
+                    🎓<br>
+                    Banner image not found
+                </div>
+
+            </div>
         </div>
-        </div></div>
         """, unsafe_allow_html=True)
 
 # ----------------------------------------------------
