@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from pathlib import Path
 import joblib
 
 from utils.theme import load_css
@@ -19,8 +20,13 @@ load_css()
 # Load Model & Scaler
 # ==========================================
 
-model = joblib.load("models/instructor_effectiveness_model.pkl")
-scaler = joblib.load("models/minmax_scaler.pkl")
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+MODEL_PATH = BASE_DIR / "models" / "instructor_effectiveness_model.pkl"
+SCALER_PATH = BASE_DIR / "models" / "minmax_scaler.pkl"
+
+model = joblib.load(MODEL_PATH)
+scaler = joblib.load(SCALER_PATH)
 
 # ==========================================
 # Sidebar
