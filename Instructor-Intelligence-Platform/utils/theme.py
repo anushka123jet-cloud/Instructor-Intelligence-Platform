@@ -1,17 +1,17 @@
-import streamlit as st
 from pathlib import Path
+import streamlit as st
 
 
 def load_css():
-    # Project root directory
+
     BASE_DIR = Path(__file__).resolve().parent.parent
 
-    # Absolute path to CSS file
-    css_path = BASE_DIR / "assets" / "css" / "style.css"
+    CSS_PATH = BASE_DIR / "assets" / "css" / "style.css"
 
-    # Load CSS
-    with open(css_path, "r", encoding="utf-8") as f:
-        st.markdown(
-            f"<style>{f.read()}</style>",
-            unsafe_allow_html=True
-        )
+    with open(CSS_PATH, "r", encoding="utf-8") as f:
+        css = f.read()
+
+    st.markdown(
+        f"<style>{css}</style>",
+        unsafe_allow_html=True
+    )
