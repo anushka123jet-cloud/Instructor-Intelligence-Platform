@@ -2,10 +2,10 @@ import streamlit as st
 import pandas as pd
 import joblib
 import plotly.express as px
+from pathlib import Path
+
 from utils.theme import load_css
 from utils.components import hero
-
-load_css()
 
 # =====================================
 # Page Configuration
@@ -18,11 +18,24 @@ st.set_page_config(
 )
 
 # =====================================
-# Load Model
+# Load CSS
 # =====================================
 
-model = joblib.load("models/instructor_effectiveness_model.pkl")
-scaler = joblib.load("models/minmax_scaler.pkl")
+load_css()
+
+
+
+# =====================================
+# Load Model & Scaler
+# =====================================
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+MODEL_PATH = BASE_DIR / "models" / "instructor_effectiveness_model.pkl"
+SCALER_PATH = BASE_DIR / "models" / "minmax_scaler.pkl"
+
+model = joblib.load(MODEL_PATH)
+scaler = joblib.load(SCALER_PATH)
 
 # =====================================
 # Sidebar
