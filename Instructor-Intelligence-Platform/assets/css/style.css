@@ -1,13 +1,45 @@
 /* =========================================================
    INSTRUCTOR INTELLIGENCE PLATFORM
+   PREMIUM DARK / VERCEL-INSPIRED UI
 ========================================================= */
 
 
 /* =========================================================
-   FONT
+   GOOGLE FONT
 ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+/* =========================================================
+   DESIGN TOKENS
+========================================================= */
+
+:root {
+
+    --bg: #070A0F;
+    --bg-soft: #0A0F17;
+    --bg-card: rgba(15, 23, 42, 0.72);
+
+    --border: rgba(148, 163, 184, 0.14);
+    --border-hover: rgba(96, 165, 250, 0.35);
+
+    --text: #F1F5F9;
+    --text-soft: #CBD5E1;
+    --text-muted: #94A3B8;
+
+    --blue: #60A5FA;
+    --blue-bright: #3B82F6;
+
+    --violet: #8B5CF6;
+    --cyan: #22D3EE;
+
+    --green: #34D399;
+    --yellow: #FBBF24;
+    --red: #FB7185;
+
+    --radius: 16px;
+}
 
 
 /* =========================================================
@@ -17,17 +49,45 @@
 html,
 body,
 [class*="css"] {
+
     font-family: 'Inter', sans-serif !important;
+
+    color: var(--text);
 }
 
-body {
-    background: #080b12 !important;
-}
+
+/* =========================================================
+   MAIN APPLICATION BACKGROUND
+========================================================= */
 
 .stApp {
-    background-color: #080b12 !important;
 
-    background-image:
+    min-height: 100vh;
+
+    background:
+
+        /* Blue glow */
+        radial-gradient(
+            circle at 78% 5%,
+            rgba(59, 130, 246, 0.12),
+            transparent 25%
+        ),
+
+        /* Violet glow */
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(139, 92, 246, 0.08),
+            transparent 28%
+        ),
+
+        /* Cyan glow */
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(34, 211, 238, 0.045),
+            transparent 22%
+        ),
+
+        /* Vercel-style grid */
         linear-gradient(
             rgba(255,255,255,0.025) 1px,
             transparent 1px
@@ -37,38 +97,32 @@ body {
             rgba(255,255,255,0.025) 1px,
             transparent 1px
         ),
-        radial-gradient(
-            circle at 75% 5%,
-            rgba(37,99,235,0.14),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 15% 85%,
-            rgba(6,182,212,0.08),
-            transparent 25%
-        );
+
+        #070A0F;
 
     background-size:
+        auto,
+        auto,
+        auto,
         46px 46px,
-        46px 46px,
-        100% 100%,
-        100% 100%;
-
-    color: #e5e7eb !important;
+        46px 46px;
 }
 
 
 /* =========================================================
-   MAIN CONTAINER
+   MAIN CONTENT
 ========================================================= */
 
 [data-testid="stAppViewContainer"] .main .block-container {
+
     max-width: 1450px !important;
 
     padding-top: 2.5rem !important;
-    padding-left: 2.2rem !important;
-    padding-right: 2.2rem !important;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
     padding-bottom: 4rem !important;
+
+    margin: 0 auto !important;
 }
 
 
@@ -77,25 +131,33 @@ body {
 ========================================================= */
 
 section[data-testid="stSidebar"] {
-    background: #0b0f17 !important;
 
-    border-right: 1px solid rgba(255,255,255,0.08) !important;
+    background:
+
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(59,130,246,0.08),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            180deg,
+            #080C12 0%,
+            #0A0F17 100%
+        );
+
+    border-right: 1px solid rgba(148,163,184,0.12);
 
     box-shadow:
-        8px 0 30px rgba(0,0,0,0.25) !important;
+        8px 0 35px rgba(0,0,0,0.25);
 }
 
 
-/* Sidebar normal text */
+/* Sidebar global text */
 
-section[data-testid="stSidebar"] p,
-section[data-testid="stSidebar"] span,
-section[data-testid="stSidebar"] label {
-    color: #cbd5e1 !important;
+section[data-testid="stSidebar"] * {
 
-    font-size: 14px !important;
-
-    font-weight: 500 !important;
+    color: #CBD5E1;
 }
 
 
@@ -104,18 +166,36 @@ section[data-testid="stSidebar"] label {
 section[data-testid="stSidebar"] h1,
 section[data-testid="stSidebar"] h2,
 section[data-testid="stSidebar"] h3 {
-    color: #f1f5f9 !important;
 
-    font-size: 18px !important;
+    color: #F1F5F9 !important;
 
     font-weight: 600 !important;
+
+    letter-spacing: -0.02em;
 }
 
 
-/* Sidebar horizontal line */
+/* Sidebar normal text */
+
+section[data-testid="stSidebar"] p {
+
+    color: #94A3B8;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+}
+
+
+/* Sidebar divider */
 
 section[data-testid="stSidebar"] hr {
-    border-color: rgba(255,255,255,0.08) !important;
+
+    border: none;
+
+    border-top: 1px solid rgba(148,163,184,0.12);
+
+    margin: 22px 0;
 }
 
 
@@ -124,15 +204,60 @@ section[data-testid="stSidebar"] hr {
 ========================================================= */
 
 section[data-testid="stSidebar"] [data-testid="stPageLink"] {
-    border-radius: 9px !important;
 
-    margin: 3px 0 !important;
+    border-radius: 9px;
 
-    transition: all 0.2s ease !important;
+    margin: 3px 0;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
+
 section[data-testid="stSidebar"] [data-testid="stPageLink"]:hover {
-    background: rgba(255,255,255,0.06) !important;
+
+    background: rgba(255,255,255,0.055);
+
+    transform: translateX(2px);
+}
+
+
+/* Active page */
+
+section[data-testid="stSidebar"]
+[data-testid="stPageLink-NavLink"][aria-current="page"] {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(59,130,246,0.18),
+            rgba(139,92,246,0.10)
+        );
+
+    border: 1px solid rgba(96,165,250,0.16);
+
+    color: #F8FAFC !important;
+}
+
+
+/* =========================================================
+   SIDEBAR BUTTONS / LINKS
+========================================================= */
+
+section[data-testid="stSidebar"] a {
+
+    color: #CBD5E1 !important;
+
+    font-size: 14px !important;
+
+    font-weight: 500 !important;
+}
+
+
+section[data-testid="stSidebar"] a:hover {
+
+    color: #F8FAFC !important;
 }
 
 
@@ -140,26 +265,47 @@ section[data-testid="stSidebar"] [data-testid="stPageLink"]:hover {
    HEADINGS
 ========================================================= */
 
+/* Main page title */
+
 h1 {
-    color: #f8fafc !important;
+
+    color: #F8FAFC !important;
 
     font-weight: 650 !important;
 
     letter-spacing: -0.035em !important;
 }
 
+
+/* Section headings */
+
 h2 {
-    color: #e2e8f0 !important;
+
+    color: #E2E8F0 !important;
 
     font-weight: 600 !important;
 
-    letter-spacing: -0.02em !important;
+    letter-spacing: -0.025em !important;
 }
 
+
+/* Smaller headings */
+
 h3 {
-    color: #cbd5e1 !important;
+
+    color: #CBD5E1 !important;
 
     font-weight: 600 !important;
+
+    letter-spacing: -0.015em !important;
+}
+
+
+/* Paragraphs */
+
+p {
+
+    color: #AFC0D4;
 }
 
 
@@ -168,59 +314,70 @@ h3 {
 ========================================================= */
 
 .hero {
+
     position: relative;
 
     width: 100%;
 
     box-sizing: border-box;
 
-    padding: 48px 50px;
+    padding: 44px 50px;
 
-    margin-bottom: 32px;
+    margin: 0 0 34px 0;
 
     border-radius: 20px;
 
     background:
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(37,99,235,0.16),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            rgba(15,23,42,0.95),
-            rgba(15,23,42,0.72)
-        );
 
-    border: 1px solid rgba(148,163,184,0.14);
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(59,130,246,0.12),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(139,92,246,0.08),
+            transparent 28%
+        ),
+
+        rgba(12,18,30,0.82);
+
+    border: 1px solid rgba(148,163,184,0.15);
 
     box-shadow:
-        0 20px 60px rgba(0,0,0,0.28);
+
+        0 20px 70px rgba(0,0,0,0.35),
+
+        inset 0 1px 0 rgba(255,255,255,0.035);
+
+    text-align: center;
+
+    overflow: hidden;
 }
 
 
-/* subtle top border */
+/* Hero top glow */
 
 .hero::before {
+
     content: "";
 
     position: absolute;
 
-    top: 0;
-    left: 8%;
-    right: 8%;
+    top: -100px;
+    left: 50%;
 
-    height: 1px;
+    width: 420px;
+    height: 200px;
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(59,130,246,0.7),
-        rgba(34,211,238,0.7),
-        transparent
-    );
+    transform: translateX(-50%);
 
-    opacity: 0.8;
+    background: rgba(59,130,246,0.12);
+
+    filter: blur(80px);
+
+    pointer-events: none;
 }
 
 
@@ -229,25 +386,33 @@ h3 {
 ========================================================= */
 
 .hero-badge {
+
+    position: relative;
+
     display: inline-block;
 
-    padding: 7px 15px;
+    padding: 7px 16px;
 
-    margin-bottom: 15px;
+    margin-bottom: 16px;
 
     border-radius: 999px;
 
-    background: rgba(59,130,246,0.08);
+    background:
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.12),
+            rgba(34,211,238,0.07)
+        );
 
-    border: 1px solid rgba(56,189,248,0.25);
+    border: 1px solid rgba(96,165,250,0.25);
 
-    color: #67e8f9 !important;
+    color: #67E8F9 !important;
 
-    font-size: 12px !important;
+    font-size: 12px;
 
-    font-weight: 600 !important;
+    font-weight: 600;
 
-    letter-spacing: 0.04em;
+    letter-spacing: 0.02em;
 }
 
 
@@ -256,11 +421,14 @@ h3 {
 ========================================================= */
 
 .hero-title {
-    margin: 8px 0 14px 0 !important;
+
+    position: relative;
+
+    margin: 8px 0 12px 0 !important;
 
     padding: 0 !important;
 
-    color: #f8fafc !important;
+    color: #F8FAFC !important;
 
     font-size: 46px !important;
 
@@ -279,11 +447,16 @@ h3 {
 ========================================================= */
 
 .hero-subtitle {
-    max-width: 850px;
+
+    position: relative;
+
+    max-width: 820px;
 
     margin: 0 auto !important;
 
-    color: #94a3b8 !important;
+    padding: 0 !important;
+
+    color: #94A3B8 !important;
 
     font-size: 16px !important;
 
@@ -298,59 +471,69 @@ h3 {
 ========================================================= */
 
 .metric-card {
+
     background:
+
         linear-gradient(
             145deg,
-            rgba(255,255,255,0.055),
-            rgba(255,255,255,0.025)
+            rgba(20,29,46,0.82),
+            rgba(10,15,24,0.78)
         );
 
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(18px);
 
-    border: 1px solid rgba(148,163,184,0.12);
+    border: 1px solid rgba(148,163,184,0.13);
 
-    padding: 26px;
+    padding: 28px;
 
     border-radius: 16px;
 
     text-align: center;
 
-    color: #f8fafc;
+    color: white;
 
     box-shadow:
-        0 12px 35px rgba(0,0,0,0.20);
+        0 15px 40px rgba(0,0,0,0.24),
+
+        inset 0 1px 0 rgba(255,255,255,0.035);
 
     transition:
         transform 0.25s ease,
-        border-color 0.25s ease,
-        box-shadow 0.25s ease;
+        border-color 0.25s ease;
 }
+
 
 .metric-card:hover {
-    transform: translateY(-4px);
 
-    border-color: rgba(59,130,246,0.35);
+    transform: translateY(-3px);
 
-    box-shadow:
-        0 18px 45px rgba(0,0,0,0.30);
+    border-color: rgba(96,165,250,0.28);
 }
 
 
+/* =========================================================
+   METRIC TEXT
+========================================================= */
+
 .metric-title {
+
     font-size: 13px;
 
     font-weight: 500;
 
-    color: #94a3b8;
+    color: #94A3B8;
 }
 
 
 .metric-value {
+
     font-size: 42px;
 
     font-weight: 650;
 
     letter-spacing: -0.035em;
+
+    color: #F8FAFC;
 }
 
 
@@ -359,41 +542,59 @@ h3 {
 ========================================================= */
 
 div[data-testid="stMetric"] {
+
+    position: relative;
+
     background:
+
         linear-gradient(
             145deg,
-            rgba(15,23,42,0.90),
-            rgba(15,23,42,0.65)
-        ) !important;
+            rgba(17,25,39,0.82),
+            rgba(10,15,24,0.75)
+        );
 
-    border: 1px solid rgba(148,163,184,0.12) !important;
+    border-radius: 15px;
 
-    border-radius: 16px !important;
+    padding: 20px;
 
-    padding: 20px !important;
+    border: 1px solid rgba(148,163,184,0.12);
 
     box-shadow:
-        0 10px 30px rgba(0,0,0,0.20);
+        0 12px 35px rgba(0,0,0,0.22),
 
-    transition: all 0.25s ease;
+        inset 0 1px 0 rgba(255,255,255,0.025);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
 }
+
 
 div[data-testid="stMetric"]:hover {
-    border-color: rgba(59,130,246,0.30) !important;
 
     transform: translateY(-3px);
+
+    border-color: rgba(96,165,250,0.28);
 }
 
+
 div[data-testid="stMetricLabel"] {
-    color: #94a3b8 !important;
+
+    color: #94A3B8 !important;
+
+    font-size: 12px !important;
 
     font-weight: 500 !important;
 }
 
+
 div[data-testid="stMetricValue"] {
-    color: #f8fafc !important;
+
+    color: #F8FAFC !important;
 
     font-weight: 650 !important;
+
+    letter-spacing: -0.035em;
 }
 
 
@@ -402,40 +603,53 @@ div[data-testid="stMetricValue"] {
 ========================================================= */
 
 .stButton > button {
+
     width: 100%;
 
-    min-height: 48px;
+    min-height: 50px;
 
-    border-radius: 10px !important;
+    border-radius: 10px;
 
-    border: 1px solid rgba(96,165,250,0.25) !important;
+    border: 1px solid rgba(96,165,250,0.25);
+
+    font-size: 15px;
+
+    font-weight: 600;
 
     background:
+
         linear-gradient(
             135deg,
-            #2563eb,
-            #4f46e5
-        ) !important;
+            #2563EB,
+            #4F46E5
+        );
 
-    color: white !important;
-
-    font-size: 15px !important;
-
-    font-weight: 600 !important;
+    color: #FFFFFF;
 
     box-shadow:
-        0 8px 25px rgba(37,99,235,0.20);
+        0 8px 25px rgba(37,99,235,0.18);
 
-    transition: all 0.25s ease !important;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
 }
 
-.stButton > button:hover {
-    transform: translateY(-2px) !important;
 
-    border-color: rgba(125,211,252,0.55) !important;
+.stButton > button:hover {
+
+    transform: translateY(-2px);
+
+    border-color: rgba(147,197,253,0.45);
 
     box-shadow:
-        0 12px 32px rgba(37,99,235,0.30) !important;
+        0 12px 32px rgba(37,99,235,0.28);
+}
+
+
+.stButton > button:active {
+
+    transform: translateY(0);
 }
 
 
@@ -443,21 +657,45 @@ div[data-testid="stMetricValue"] {
    INPUTS
 ========================================================= */
 
-div[data-baseweb="input"],
-div[data-baseweb="select"] {
-    background: rgba(255,255,255,0.035) !important;
+div[data-baseweb="input"] {
 
-    border-radius: 10px !important;
+    background: rgba(15,23,42,0.7);
 
-    border: 1px solid rgba(148,163,184,0.14) !important;
+    border-radius: 10px;
+
+    border: 1px solid rgba(148,163,184,0.14);
+
+    transition: border-color 0.2s ease;
 }
 
-div[data-baseweb="input"]:focus-within,
-div[data-baseweb="select"]:focus-within {
-    border-color: rgba(59,130,246,0.55) !important;
 
-    box-shadow:
-        0 0 0 2px rgba(59,130,246,0.10) !important;
+div[data-baseweb="input"]:focus-within {
+
+    border-color: rgba(96,165,250,0.5);
+}
+
+
+/* =========================================================
+   TEXT INPUT
+========================================================= */
+
+input {
+
+    color: #F1F5F9 !important;
+}
+
+
+/* =========================================================
+   SELECTBOX
+========================================================= */
+
+div[data-baseweb="select"] > div {
+
+    background: rgba(15,23,42,0.72) !important;
+
+    border-color: rgba(148,163,184,0.14) !important;
+
+    border-radius: 10px !important;
 }
 
 
@@ -465,25 +703,44 @@ div[data-baseweb="select"]:focus-within {
    SLIDERS
 ========================================================= */
 
-div[data-testid="stSlider"] {
-    padding-top: 5px;
+/* Slider track */
+
+div[data-testid="stSlider"] [data-baseweb="slider"] div {
+
+    border-radius: 999px;
 }
 
+
+/* Slider filled portion */
+
+div[data-testid="stSlider"]
+div[role="slider"] {
+
+    background: #60A5FA !important;
+
+    border-color: #60A5FA !important;
+}
+
+
+/* Slider label */
+
 div[data-testid="stSlider"] label {
-    color: #cbd5e1 !important;
+
+    color: #CBD5E1 !important;
 
     font-weight: 500 !important;
+
+    font-size: 14px !important;
 }
 
 
 /* =========================================================
-   TEXT INPUT LABELS
+   NUMBER INPUT
 ========================================================= */
 
-label {
-    color: #cbd5e1 !important;
+div[data-testid="stNumberInput"] input {
 
-    font-weight: 500 !important;
+    color: #F8FAFC !important;
 }
 
 
@@ -492,9 +749,39 @@ label {
 ========================================================= */
 
 .stAlert {
+
     border-radius: 12px !important;
 
     border: 1px solid rgba(148,163,184,0.12) !important;
+
+    background: rgba(15,23,42,0.68) !important;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.15);
+}
+
+
+/* =========================================================
+   FILE UPLOADER
+========================================================= */
+
+[data-testid="stFileUploader"] {
+
+    border-radius: 14px;
+
+    background: rgba(15,23,42,0.55);
+
+    border: 1px dashed rgba(96,165,250,0.28);
+
+    padding: 8px;
+
+    transition: border-color 0.2s ease;
+}
+
+
+[data-testid="stFileUploader"]:hover {
+
+    border-color: rgba(96,165,250,0.55);
 }
 
 
@@ -503,14 +790,16 @@ label {
 ========================================================= */
 
 .chart-card {
+
     background:
+
         linear-gradient(
             145deg,
-            rgba(15,23,42,0.85),
-            rgba(15,23,42,0.55)
+            rgba(17,24,39,0.80),
+            rgba(9,14,22,0.75)
         );
 
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
 
     border: 1px solid rgba(148,163,184,0.12);
 
@@ -523,35 +812,19 @@ label {
     margin-bottom: 20px;
 
     box-shadow:
-        0 12px 35px rgba(0,0,0,0.22);
+        0 15px 40px rgba(0,0,0,0.22);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
 }
 
 
-/* =========================================================
-   FILE UPLOADER
-========================================================= */
+.chart-card:hover {
 
-[data-testid="stFileUploader"] {
-    background: rgba(255,255,255,0.025);
+    transform: translateY(-3px);
 
-    border: 1px dashed rgba(148,163,184,0.25);
-
-    border-radius: 14px;
-
-    padding: 10px;
-}
-
-
-/* =========================================================
-   EXPANDERS
-========================================================= */
-
-details {
-    background: rgba(255,255,255,0.025) !important;
-
-    border: 1px solid rgba(148,163,184,0.10) !important;
-
-    border-radius: 12px !important;
+    border-color: rgba(96,165,250,0.22);
 }
 
 
@@ -560,9 +833,61 @@ details {
 ========================================================= */
 
 .js-plotly-plot {
+
     border-radius: 14px;
 
     overflow: hidden;
+
+    transition:
+        border-color 0.25s ease;
+}
+
+
+/* =========================================================
+   EXPANDERS
+========================================================= */
+
+details {
+
+    border-radius: 12px !important;
+
+    border: 1px solid rgba(148,163,184,0.12) !important;
+
+    background: rgba(15,23,42,0.55) !important;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   DATAFRAME
+========================================================= */
+
+[data-testid="stDataFrame"] {
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(148,163,184,0.12);
+}
+
+
+/* =========================================================
+   TABS
+========================================================= */
+
+button[data-baseweb="tab"] {
+
+    color: #94A3B8 !important;
+
+    font-weight: 500 !important;
+}
+
+
+button[data-baseweb="tab"][aria-selected="true"] {
+
+    color: #F8FAFC !important;
 }
 
 
@@ -571,7 +896,8 @@ details {
 ========================================================= */
 
 hr {
-    border-color: rgba(148,163,184,0.10) !important;
+
+    border-color: rgba(148,163,184,0.12) !important;
 }
 
 
@@ -580,18 +906,48 @@ hr {
 ========================================================= */
 
 .main {
+
     animation: pageFade 0.45s ease;
 }
+
 
 @keyframes pageFade {
 
     from {
         opacity: 0;
-        transform: translateY(5px);
     }
 
     to {
         opacity: 1;
+    }
+}
+
+
+/* =========================================================
+   HERO / CARD ANIMATION
+========================================================= */
+
+.hero,
+.metric-card,
+.chart-card {
+
+    animation: fadeIn 0.5s ease;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+    }
+
+    to {
+
+        opacity: 1;
+
         transform: translateY(0);
     }
 }
@@ -602,41 +958,58 @@ hr {
 ========================================================= */
 
 ::-webkit-scrollbar {
+
     width: 8px;
+
+    height: 8px;
 }
+
 
 ::-webkit-scrollbar-track {
-    background: #080b12;
+
+    background: #070A0F;
 }
+
 
 ::-webkit-scrollbar-thumb {
-    background: #273449;
 
-    border-radius: 20px;
+    background: #263449;
+
+    border-radius: 999px;
 }
 
+
 ::-webkit-scrollbar-thumb:hover {
-    background: #3b82f6;
+
+    background: #3B82F6;
 }
 
 
 /* =========================================================
-   HIDE ONLY STREAMLIT DEFAULT MENU
+   HIDE STREAMLIT DEFAULT UI
 ========================================================= */
 
 #MainMenu {
+
     visibility: hidden;
 }
+
 
 footer {
+
     visibility: hidden;
 }
 
 
-/* =========================================================
-   IMPORTANT:
-   DO NOT HIDE HEADER
-========================================================= */
+/*
+   Keep header available so Streamlit's
+   page navigation remains stable.
+*/
+
+header {
+
+    background: transparent !important;
+}
 
 
 /* =========================================================
@@ -646,23 +1019,484 @@ footer {
 @media (max-width: 768px) {
 
     [data-testid="stAppViewContainer"] .main .block-container {
+
         padding-left: 1rem !important;
+
         padding-right: 1rem !important;
+
+        padding-top: 1.5rem !important;
     }
+
 
     .hero {
-        padding: 35px 22px;
+
+        padding: 32px 20px;
+
+        border-radius: 16px;
     }
+
 
     .hero-title {
-        font-size: 34px !important;
+
+        font-size: 32px !important;
+
+        letter-spacing: -0.035em !important;
     }
+
 
     .hero-subtitle {
-        font-size: 15px !important;
+
+        font-size: 14px !important;
     }
 
+
     .metric-value {
+
+        font-size: 36px;
+    }
+
+
+    h1 {
+
+        font-size: 30px !important;
+    }
+
+
+    h2 {
+
+        font-size: 23px !important;
+    }
+}
+/* =========================================================
+   PREMIUM HOME HERO
+========================================================= */
+
+.home-hero {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    gap: 45px;
+
+    align-items: center;
+
+    min-height: 480px;
+
+    padding: 58px 58px;
+
+    margin-bottom: 34px;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 85% 45%,
+            rgba(59,130,246,0.13),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(139,92,246,0.09),
+            transparent 30%
+        ),
+
+        rgba(10,15,25,0.78);
+
+    border: 1px solid rgba(148,163,184,0.14);
+
+    box-shadow:
+
+        0 25px 80px rgba(0,0,0,0.35),
+
+        inset 0 1px 0 rgba(255,255,255,0.035);
+}
+
+
+/* subtle top light */
+
+.home-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -180px;
+
+    left: 35%;
+
+    width: 600px;
+
+    height: 350px;
+
+    background: rgba(59,130,246,0.08);
+
+    filter: blur(100px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO LEFT
+========================================================= */
+
+.hero-left {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 650px;
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.hero-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 8px 15px;
+
+    margin-bottom: 22px;
+
+    border-radius: 999px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(59,130,246,0.12),
+            rgba(34,211,238,0.07)
+        );
+
+    border: 1px solid rgba(96,165,250,0.25);
+
+    color: #67E8F9;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   MAIN TITLE
+========================================================= */
+
+.hero-main-title {
+
+    margin: 0;
+
+    font-size: clamp(42px, 4vw, 64px);
+
+    line-height: 1.03;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 650;
+
+    color: #F8FAFC;
+}
+
+
+/* Gradient phrase */
+
+.hero-main-title span {
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #60A5FA,
+            #22D3EE,
+            #8B5CF6
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero-description {
+
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    color: #94A3B8;
+
+    font-size: 15px;
+
+    line-height: 1.75;
+
+    letter-spacing: -0.01em;
+}
+
+
+/* =========================================================
+   EFFECTIVENESS PILLS
+========================================================= */
+
+.effectiveness-pills {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 27px;
+
+    flex-wrap: wrap;
+}
+
+
+.effectiveness-pill {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.035);
+
+    border: 1px solid rgba(148,163,184,0.15);
+
+    color: #CBD5E1;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    transition: all 0.2s ease;
+}
+
+
+.effectiveness-pill:hover {
+
+    background: rgba(255,255,255,0.06);
+
+    border-color: rgba(148,163,184,0.25);
+
+    transform: translateY(-2px);
+}
+
+
+.effectiveness-pill span {
+
+    width: 7px;
+
+    height: 7px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+
+.effectiveness-pill.low span {
+
+    background: #FB7185;
+
+    box-shadow: 0 0 10px rgba(251,113,133,0.6);
+}
+
+
+.effectiveness-pill.medium span {
+
+    background: #FBBF24;
+
+    box-shadow: 0 0 10px rgba(251,191,36,0.6);
+}
+
+
+.effectiveness-pill.high span {
+
+    background: #34D399;
+
+    box-shadow: 0 0 10px rgba(52,211,153,0.6);
+}
+
+
+/* =========================================================
+   HERO RIGHT
+========================================================= */
+
+.hero-right {
+
+    position: relative;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-height: 360px;
+}
+
+
+/* =========================================================
+   IMAGE GLOW
+========================================================= */
+
+.hero-image-glow {
+
+    position: absolute;
+
+    width: 330px;
+
+    height: 280px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(59,130,246,0.25),
+            rgba(139,92,246,0.08),
+            transparent 70%
+        );
+
+    filter: blur(35px);
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   IMAGE CARD
+========================================================= */
+
+.hero-image-card {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    max-width: 520px;
+
+    padding: 5px;
+
+    border-radius: 18px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(96,165,250,0.45),
+            rgba(139,92,246,0.28),
+            rgba(34,211,238,0.18)
+        );
+
+    box-shadow:
+
+        0 25px 70px rgba(0,0,0,0.45),
+
+        0 0 50px rgba(59,130,246,0.10);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.hero-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    border-radius: 14px;
+
+    object-fit: cover;
+
+    background: #0B1220;
+}
+
+
+/* =========================================================
+   RESPONSIVE HERO
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .home-hero {
+
+        grid-template-columns: 1fr;
+
+        padding: 40px 28px;
+
+        gap: 35px;
+    }
+
+    .hero-left {
+
+        max-width: 100%;
+    }
+
+    .hero-right {
+
+        min-height: auto;
+    }
+
+    .hero-main-title {
+
+        font-size: 42px;
+    }
+
+    .hero-image-card {
+
+        max-width: 600px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .home-hero {
+
+        padding: 30px 20px;
+
+        border-radius: 16px;
+    }
+
+    .hero-main-title {
+
         font-size: 34px;
+
+        letter-spacing: -0.045em;
+    }
+
+    .hero-description {
+
+        font-size: 14px;
     }
 }
