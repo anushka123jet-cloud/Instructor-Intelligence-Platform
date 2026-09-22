@@ -7,11 +7,7 @@ from utils.theme import load_css
 from utils.components import hero
 
 # FIRST STREAMLIT COMMAND
-st.set_page_config(
-    page_title="Instructor Prediction",
-    page_icon="🎯",
-    layout="wide"
-)
+
 
 # THEN load css
 load_css()
