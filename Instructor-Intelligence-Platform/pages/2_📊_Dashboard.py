@@ -9,7 +9,14 @@ from utils.components import hero
 # ==========================================
 # PAGE CONFIGURATION
 # ==========================================
+st.set_page_config(
+    page_title="Dashboard",
+    page_icon="📊",
+    layout="wide"
+)
 
+# Load CSS
+load_css()
 
 
 
