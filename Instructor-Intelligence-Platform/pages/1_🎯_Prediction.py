@@ -19,7 +19,13 @@ load_css()
 # ==========================================
 # Load Model & Scaler
 # ==========================================
+BASE_DIR = Path(__file__).resolve().parent.parent
 
+MODEL_PATH = BASE_DIR / "models" / "instructor_effectiveness_model.pkl"
+SCALER_PATH = BASE_DIR / "models" / "minmax_scaler.pkl"
+
+model = joblib.load(MODEL_PATH)
+scaler = joblib.load(SCALER_PATH)
 
 
 # ==========================================
