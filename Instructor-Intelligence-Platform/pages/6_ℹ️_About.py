@@ -8,11 +8,7 @@ load_css()
 # Page Configuration
 # =====================================
 
-st.set_page_config(
-    page_title="About",
-    page_icon="ℹ️",
-    layout="wide"
-)
+
 
 # =====================================
 # Custom CSS
