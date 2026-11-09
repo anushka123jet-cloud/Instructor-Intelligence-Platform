@@ -11,7 +11,11 @@ load_css()
 # Page Configuration
 # -----------------------------------
 
-
+st.set_page_config(
+    page_title="Analytics",
+    page_icon="📈",
+    layout="wide"
+)
 
 # -----------------------------------
 # Load Dataset
