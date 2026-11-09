@@ -11,11 +11,7 @@ from utils.components import hero
 # Page Configuration
 # =====================================
 
-st.set_page_config(
-    page_title="Batch Prediction",
-    page_icon="📂",
-    layout="wide"
-)
+
 
 # =====================================
 # Load CSS
