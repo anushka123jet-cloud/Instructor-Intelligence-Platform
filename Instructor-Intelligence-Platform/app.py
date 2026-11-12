@@ -5,12 +5,7 @@ from pathlib import Path
 # ----------------------------------------------------
 # PAGE CONFIG
 # ----------------------------------------------------
-st.set_page_config(
-    page_title="Instructor Intelligence Platform",
-    page_icon="🎓",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
+
 
 # ----------------------------------------------------
 # FONTS + DESIGN TOKENS + CUSTOM CSS
